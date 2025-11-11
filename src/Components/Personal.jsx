@@ -8,7 +8,7 @@ function Personal({ landingPageRef, personalPageRef }) {
     return (
         <>
             <div ref={personalPageRef} className='flex flex-col justify-start items-center min-h-screen bg-[#301E67]'>
-                <h2 className='flex flex-col justify-center items-center text-[#B6EADA] uppercase text-[2rem] py-8'>
+                <h2 className='flex flex-col justify-center items-center text-[#B6EADA] uppercase text-2xl sm:text-3xl md:text-4xl md:mt-8 pt-16 pb-8'>
                     Personal Projects
                 </h2>
                 <div className='flex flex-col md:flex-row justify-center items-center flex-wrap gap-6 min-w-[content]'>
