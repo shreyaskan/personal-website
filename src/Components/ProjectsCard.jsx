@@ -59,7 +59,9 @@ export default function ProjectsCard({ icon, title, description, link }) {
                             </a>
                         </Typography>
                     ) : (
-                        <code className='pt-6'>GitHub repo pending...</code>
+                        <Typography variant="body2" sx={{ pt: "1.5rem" }}>
+                            <code className='pt-6'>GitHub repo pending...</code>
+                        </Typography>
                     )}
                 </CardContent>
             </Card>

@@ -10,63 +10,37 @@ import drizzle_logo from '../assets/drizzle_logo.png'
 import expressJsLogo from '../assets/expressjs_logo.png'
 
 const languages = [
-    {
-        name: "TypeScript",
-        logo: <img src={typescriptLogo} width="30px" />
-    },
-    {
-        name: "React.js",
-        logo: <img src={reactLogo} width="30px" />
-    },
-    {
-        name: "React Router",
-        logo: <img src={reactRouterLogo} width="30px" />
-    },
-    {
-        name: "Express.js",
-        logo: <img src={expressJsLogo} width="30px" className='rounded-xs' />
-    },
-    {
-        name: "Node.js",
-        logo: <img src={nodeJs} width="30px" className='rounded-xs' />
-    },
-    {
-        name: "Supabase ORM",
-        logo: <img src={supabaseLogo} width="30px" className='rounded-xs' />
-    },
-    {
-        name: "Drizzle ORM",
-        logo: <img src={drizzle_logo} width="30px" className='rounded-xs' />
-    },
-    {
-        name: "SQL",
-        logo: <img src={sqlLogo} width="50rem" />
-    },
-    {
-        name: "Python",
-        logo: <img src={pythonLogo} width="30px" className='rounded-xs' />
-    },
+    { name: "TypeScript", logo: typescriptLogo },
+    { name: "React.js", logo: reactLogo },
+    { name: "React Router", logo: reactRouterLogo },
+    { name: "Express.js", logo: expressJsLogo },
+    { name: "Node.js", logo: nodeJs },
+    { name: "Supabase ORM", logo: supabaseLogo },
+    { name: "Drizzle ORM", logo: drizzle_logo },
+    { name: "SQL", logo: sqlLogo },
+    { name: "Python", logo: pythonLogo },
 ]
 
 export default function TechStack() {
     return (
-        <div>
-            <div className="bg-[#03001C] text-[#B6EADA] min-w-[content] mt-8 px-4 py-3 rounded-xl flex flex-col justify-around">
-                <h2 className='text-[1.5rem] flex flex-col justify-center items-center'>
-                    Tech Stack
-                </h2>
-                <div className='grid grid-cols-2 gap-12 mt-4'>
-                    {languages.map((language) => {
-                        return (
-                            <div className='flex'>
-                                {language.logo}
-                                <p className='pl-8'>
-                                    {language.name}
-                                </p>
-                            </div>
-                        )
-                    })}
-                </div>
+        <div className="bg-[#03001C] text-[#B6EADA] mt-8 px-3 py-2 rounded-xl flex flex-col justify-around scale-90 sm:scale-95 md:scale-100 lg:scale-100 xl:scale-100 transition-transform duration-300">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl flex justify-center items-center mb-3">
+                Tech Stack
+            </h2>
+
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-2">
+                {languages.map((language, index) => (
+                    <div key={index} className="flex items-center">
+                        <img
+                            src={language.logo}
+                            alt={language.name}
+                            className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain rounded-md"
+                        />
+                        <p className="pl-4 text-xs sm:text-sm md:text-base lg:text-lg">
+                            {language.name}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
     )
