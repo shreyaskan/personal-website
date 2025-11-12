@@ -23,16 +23,13 @@ export const socials = [
 ];
 
 function LandingPage({ timelineRef, landingPageRef }) {
-    const [showDescription, setShowDescription] = useState(false)
-    const [showBirthPlace, setShowBirthPlace] = useState(false)
+    const [showLocation, setShowLocation] = useState(false)
     const isMobile = useMediaQuery('(max-width: 768px)');
 
     useEffect(() => {
-        const descTimer = setTimeout(() => setShowDescription(true), 2000);
-        const birthPlaceTimer = setTimeout(() => setShowBirthPlace(true), 6000);
+        const locationTimer = setTimeout(() => setShowLocation(true), 4000);
         return () => {
-            clearTimeout(descTimer);
-            clearTimeout(birthPlaceTimer);
+            clearTimeout(locationTimer);
         }
     }, []);
 
@@ -41,26 +38,19 @@ function LandingPage({ timelineRef, landingPageRef }) {
             ref={landingPageRef}
             className="flex flex-col justify-center items-center min-h-screen bg-[#301E67] text-center px-4"
         >
-            <div className="py-6 sm:py-4 md:py-8">
-                <TypeAnimation
-                    sequence={["Hi, I'm Shreyas"]}
-                    wrapper="span"
-                    cursor={false}
-                    className="text-[#B6EADA] text-3xl sm:text-4xl md:text-5xl md:mt-8"
-                />
-            </div>
-            {showDescription && (
-                <TypeAnimation
-                    sequence={[
-                        "Full stack engineer who's passionate about building applications."
-                    ]}
-                    wrapper="span"
-                    speed={{ type: "keyStrokeDelayInMs", value: 50 }}
-                    cursor={false}
-                    className="text-[#B6EADA] text-base sm:text-lg md:text-xl mt-3 block"
-                />
-            )}
-            {showBirthPlace && (
+            <h1 className="py-6 sm:py-4 md:py-8 text-[#B6EADA] text-3xl sm:text-4xl md:text-5xl md:mt-8">
+                Hi, I'm Shreyas
+            </h1>
+            <TypeAnimation
+                sequence={[
+                    "Full stack engineer who's passionate about building applications."
+                ]}
+                wrapper="span"
+                speed={{ type: "keyStrokeDelayInMs", value: 50 }}
+                cursor={false}
+                className="text-[#B6EADA] text-base sm:text-lg md:text-xl mt-3 block"
+            />
+            {showLocation && (
                 <TypeAnimation
                     sequence={["Based in Reading, England"]}
                     wrapper="span"
